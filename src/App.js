@@ -19,7 +19,16 @@ constructor(){
           Hello my name is  {this.state.name.firstName} {this.state.name.lastName}, I work at {this.state.company}
         </p>
        <button onClick={() => {
-        this.setState({ name: {firstName: 'Sri' , lastName: 'Ananthasubramoney'}});
+        this.setState(() => {
+          return {
+            name: {firstName: 'Sri', lastName: 'Ananthasubramoney'},
+          }
+        }, () => {
+          console.log(this.state)
+        })
+        // this.setState(
+        //   { name: {firstName: 'Sri' , lastName: 'Ananthasubramoney'}
+        // });
         console.log(this.state)
        }}>
         Change {this.state.name.lastName}       </button>
