@@ -5,36 +5,37 @@ import './App.css';
 class  App extends Component {
 constructor(){
   super();
-  this.state ={
-    name: {firstName:'Vidya', lastName: 'Money'},
-    company: 'FIS',
-  };
+  this.state = {
+  monsters: [
+    {
+      name: 'Linda',
+      id: 'a12345',
+    },
+    {
+      name: 'Frank',
+      id: 'a12346',
+    },
+    {
+      name: 'Jacky',
+      id: 'a12347',
+    },
+    {
+      name: 'Baiju',
+      id: 'a12348',
+    },
+
+  ]
+};
 }
+  
+
   render() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Hello my name is  {this.state.name.firstName} {this.state.name.lastName}, I work at {this.state.company}
-        </p>
-       <button onClick={() => {
-        this.setState(() => {
-          return {
-            name: {firstName: 'Sri', lastName: 'Ananthasubramoney'},
-          }
-        }, () => {
-          console.log(this.state)
-        })
-        // this.setState(
-        //   { name: {firstName: 'Sri' , lastName: 'Ananthasubramoney'}
-        // });
-        console.log(this.state)
-       }}>
-        Change {this.state.name.lastName}       </button>
-      </header>
-    </div>
-  );
-}
+     {  this.state.monsters.map((monster) => {
+        return <div  key={monster.id}><h1>{monster.name}</h1></div>;
+     })}
+</div>
+  )}
 }
 export default App;
