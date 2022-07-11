@@ -8,10 +8,12 @@ constructor(){
   this.state = {
   monsters: [],
 };
+console.log('1')
 }
   
 
   render() {
+    console.log('2')
   return (
     <div className="App">
      {  this.state.monsters.map((monster) => {
@@ -21,6 +23,7 @@ constructor(){
   )}
 
   componentDidMount() {
+    console.log('3')
     fetch('https://jsonplaceholder.typicode.com/users')
     .then((response) => response.json()   // console.log(response)
     .then((users) => this.setState(() => {
